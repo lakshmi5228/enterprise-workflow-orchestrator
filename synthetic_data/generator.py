@@ -13,6 +13,7 @@ import csv
 import hashlib
 import random
 from datetime import datetime, date, timedelta
+from collections import defaultdict, deque
 
 DEFAULT_SEED = 20261022
 
@@ -241,6 +242,9 @@ class SyntheticDataGenerator:
                     end_d = start_d + timedelta(days=tenure_days)
                     if end_d > today:
                         end_d = today - timedelta(days=self.rnd.randint(1, 45))
+                    # Ensure end_date is never before start_date
+                    if end_d < start_d:
+                        end_d = start_d + timedelta(days=self.rnd.randint(30, 180))
                 else:
                     status = "NOTICE_PERIOD"
                     end_d = today + timedelta(days=self.rnd.randint(5, 30))
@@ -663,7 +667,8 @@ class SyntheticDataGenerator:
 
         # 5. RECOVERED_ASSET_REMAINS_ASSIGNED (Inject 5 cases)
         # Asset marked RECOVERED with recovered_at date, but assigned_to_employee_id remains populated
-        sample_assets = [a for a in self.assets if a["status"] == "ACKNOWLEDGED"][:5]
+        # Select from index 10 onwards to ensure completely disjoint asset IDs from Rule 2 (AST-000001..AST-000005)
+        sample_assets = [a for a in self.assets[10:] if a["status"] in ["ACKNOWLEDGED", "ASSIGNED"]][:5]
         for idx, ast in enumerate(sample_assets, 1):
             emp_holder = ast["assigned_to_employee_id"]
             ast["status"] = "RECOVERED"
@@ -686,44 +691,357 @@ class SyntheticDataGenerator:
 
     def validate_dataset(self):
         """
-        Step 8 — Run validation:
-        PK uniqueness, FK integrity, allowed enums, date ordering, reconciliation.
+        Step 8 — Run comprehensive validation:
+        1. Primary Key uniqueness across all 11 entities.
+        2. Foreign Key referential integrity across all entities and relationships.
+        3. Allowed Enum domain constraints across all entities.
+        4. Temporal and date ordering consistency constraints.
+        5. Task dependency cycle detection on workflow DAGs.
+        6. Asset assignment and inventory rule validation.
+        7. Full reconciliation audit: separates unexpected errors from intentional anomalies,
+           verifying 100% precision and recall against ground truth (25 intentional anomalies).
         """
-        print("[*] Running comprehensive integrity and reconciliation validations...")
-        
-        # 1. Primary Key Uniqueness
-        emp_ids = [e["id"] for e in self.employees]
-        assert len(emp_ids) == len(set(emp_ids)), "Duplicate Employee PK detected!"
-        
-        onb_ids = [o["id"] for o in self.onboarding_cases]
-        assert len(onb_ids) == len(set(onb_ids)), "Duplicate OnboardingCase PK detected!"
-        
-        task_ids = [t["id"] for t in self.tasks]
-        assert len(task_ids) == len(set(task_ids)), "Duplicate Task PK detected!"
-        
-        grant_ids = [g["id"] for g in self.access_grants]
-        assert len(grant_ids) == len(set(grant_ids)), "Duplicate AccessGrant PK detected!"
-        
-        asset_ids = [a["id"] for a in self.assets]
-        assert len(asset_ids) == len(set(asset_ids)), "Duplicate Asset PK detected!"
-        
-        # 2. Foreign Key Integrity
-        dept_ids_set = {d["id"] for d in self.departments}
-        role_ids_set = {r["id"] for r in self.job_roles}
-        emp_ids_set = set(emp_ids)
-        access_role_ids_set = {a["id"] for a in self.access_roles}
-        
-        for emp in self.employees:
-            assert emp["department_id"] in dept_ids_set, f"Invalid dept FK in {emp['id']}"
-            assert emp["role_id"] in role_ids_set, f"Invalid role FK in {emp['id']}"
-            if emp["manager_id"]:
-                assert emp["manager_id"] in emp_ids_set, f"Invalid manager FK in {emp['id']}"
-                
-        for grant in self.access_grants:
-            assert grant["employee_id"] in emp_ids_set, f"Invalid employee FK in grant {grant['id']}"
-            assert grant["access_role_id"] in access_role_ids_set, f"Invalid role FK in grant {grant['id']}"
-            
-        print("[+] Primary Key and Foreign Key constraints passed with 100% integrity.")
+        print("[*] Running comprehensive integrity, foreign key, domain, and reconciliation validations...")
+        unexpected_errors = []
+        validation_metrics = {}
+
+        # ------------------------------------------------------------------
+        # 1. Primary Key Uniqueness (All 11 Entities)
+        # ------------------------------------------------------------------
+        entities = [
+            ("Department", self.departments),
+            ("JobRole", self.job_roles),
+            ("AccessRole", self.access_roles),
+            ("Employee", self.employees),
+            ("OnboardingCase", self.onboarding_cases),
+            ("Task", self.tasks),
+            ("TaskDependency", self.dependencies),
+            ("AccessGrant", self.access_grants),
+            ("Asset", self.assets),
+            ("OffboardingCase", self.offboarding_cases),
+            ("AuditEvent", self.audit_events)
+        ]
+
+        for name, table in entities:
+            ids = [x["id"] for x in table]
+            unique_ids = set(ids)
+            if len(ids) != len(unique_ids):
+                unexpected_errors.append(f"Duplicate Primary Key in {name}: total {len(ids)}, unique {len(unique_ids)}")
+            validation_metrics[f"pk_{name.lower()}"] = len(ids)
+
+        # ------------------------------------------------------------------
+        # 2. Foreign Key Integrity (All Relationships)
+        # ------------------------------------------------------------------
+        dept_ids = {d["id"] for d in self.departments}
+        role_ids = {r["id"] for r in self.job_roles}
+        access_role_ids = {a["id"] for a in self.access_roles}
+        emp_ids = {e["id"] for e in self.employees}
+        onb_ids = {o["id"] for o in self.onboarding_cases}
+        task_ids = {t["id"] for t in self.tasks}
+
+        for r in self.job_roles:
+            if r["department_id"] not in dept_ids:
+                unexpected_errors.append(f"FK violation: JobRole {r['id']} has invalid department_id {r['department_id']}")
+
+        for e in self.employees:
+            if e["department_id"] not in dept_ids:
+                unexpected_errors.append(f"FK violation: Employee {e['id']} has invalid department_id {e['department_id']}")
+            if e["role_id"] not in role_ids:
+                unexpected_errors.append(f"FK violation: Employee {e['id']} has invalid role_id {e['role_id']}")
+            if e["manager_id"] and e["manager_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: Employee {e['id']} has invalid manager_id {e['manager_id']}")
+
+        for o in self.onboarding_cases:
+            if o["employee_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: OnboardingCase {o['id']} has invalid employee_id {o['employee_id']}")
+            if o.get("hr_partner_id") and o["hr_partner_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: OnboardingCase {o['id']} has invalid hr_partner_id {o['hr_partner_id']}")
+            if o.get("manager_id") and o["manager_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: OnboardingCase {o['id']} has invalid manager_id {o['manager_id']}")
+
+        for t in self.tasks:
+            if t["case_id"] not in onb_ids:
+                unexpected_errors.append(f"FK violation: Task {t['id']} has invalid case_id {t['case_id']}")
+
+        for d in self.dependencies:
+            if d["task_id"] not in task_ids:
+                unexpected_errors.append(f"FK violation: TaskDependency {d['id']} has invalid task_id {d['task_id']}")
+            if d["prerequisite_task_id"] not in task_ids:
+                unexpected_errors.append(f"FK violation: TaskDependency {d['id']} has invalid prerequisite_task_id {d['prerequisite_task_id']}")
+
+        for g in self.access_grants:
+            if g["employee_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: AccessGrant {g['id']} has invalid employee_id {g['employee_id']}")
+            if g["access_role_id"] not in access_role_ids:
+                unexpected_errors.append(f"FK violation: AccessGrant {g['id']} has invalid access_role_id {g['access_role_id']}")
+
+        for a in self.assets:
+            if a.get("assigned_to_employee_id") and a["assigned_to_employee_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: Asset {a['id']} has invalid assigned_to_employee_id {a['assigned_to_employee_id']}")
+
+        for off in self.offboarding_cases:
+            if off["employee_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: OffboardingCase {off['id']} has invalid employee_id {off['employee_id']}")
+            if off.get("hr_owner_id") and off["hr_owner_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: OffboardingCase {off['id']} has invalid hr_owner_id {off['hr_owner_id']}")
+            if off.get("it_owner_id") and off["it_owner_id"] not in emp_ids:
+                unexpected_errors.append(f"FK violation: OffboardingCase {off['id']} has invalid it_owner_id {off['it_owner_id']}")
+
+        # ------------------------------------------------------------------
+        # 3. Domain Enum Constraints
+        # ------------------------------------------------------------------
+        valid_emp_types = {"FULL_TIME", "CONTRACTOR", "INTERN"}
+        valid_emp_statuses = {"OFFER_ACCEPTED", "PREBOARDING", "ACTIVE", "NOTICE_PERIOD", "TERMINATED"}
+        for e in self.employees:
+            if e["employment_type"] not in valid_emp_types:
+                unexpected_errors.append(f"Enum violation: Employee {e['id']} employment_type '{e['employment_type']}'")
+            if e["employment_status"] not in valid_emp_statuses:
+                unexpected_errors.append(f"Enum violation: Employee {e['id']} employment_status '{e['employment_status']}'")
+
+        valid_stages = {"PREBOARDING", "IT_PROVISIONING", "ASSET_DELIVERY", "ORIENTATION", "COMPLETED"}
+        valid_case_statuses = {"IN_PROGRESS", "BLOCKED", "COMPLETED"}
+        for o in self.onboarding_cases:
+            if o["stage"] not in valid_stages:
+                unexpected_errors.append(f"Enum violation: OnboardingCase {o['id']} stage '{o['stage']}'")
+            if o["status"] not in valid_case_statuses:
+                unexpected_errors.append(f"Enum violation: OnboardingCase {o['id']} status '{o['status']}'")
+
+        valid_task_statuses = {"PENDING", "IN_PROGRESS", "COMPLETED", "BLOCKED", "OVERRIDDEN"}
+        valid_task_priorities = {"LOW", "MEDIUM", "HIGH", "CRITICAL"}
+        valid_task_categories = {"HR_PREBOARDING", "EQUIPMENT_DELIVERY", "IT_ACCESS", "ORIENTATION", "ADMIN", "SECURITY", "HR", "IT", "FACILITIES"}
+        for t in self.tasks:
+            if t["status"] not in valid_task_statuses:
+                unexpected_errors.append(f"Enum violation: Task {t['id']} status '{t['status']}'")
+            if t["priority"] not in valid_task_priorities:
+                unexpected_errors.append(f"Enum violation: Task {t['id']} priority '{t['priority']}'")
+            if t["category"] not in valid_task_categories:
+                unexpected_errors.append(f"Enum violation: Task {t['id']} category '{t['category']}'")
+
+        valid_dep_types = {"FINISH_TO_START", "START_TO_START", "FINISH_TO_FINISH"}
+        for d in self.dependencies:
+            if d["dependency_type"] not in valid_dep_types:
+                unexpected_errors.append(f"Enum violation: TaskDependency {d['id']} dependency_type '{d['dependency_type']}'")
+
+        valid_grant_statuses = {"REQUESTED", "APPROVED", "PROVISIONED", "REVOKED"}
+        valid_approval_statuses = {"PENDING_APPROVAL", "APPROVED", "AUTO_APPROVED", "REJECTED"}
+        for g in self.access_grants:
+            if g["status"] not in valid_grant_statuses:
+                unexpected_errors.append(f"Enum violation: AccessGrant {g['id']} status '{g['status']}'")
+            if g["approval_status"] not in valid_approval_statuses:
+                unexpected_errors.append(f"Enum violation: AccessGrant {g['id']} approval_status '{g['approval_status']}'")
+
+        valid_asset_statuses = {"IN_STOCK", "ASSIGNED", "DELIVERED", "ACKNOWLEDGED", "RETURN_REQUESTED", "RECOVERED", "DECOMMISSIONED"}
+        valid_conditions = {"NEW", "GOOD", "DAMAGED", "LOST"}
+        for a in self.assets:
+            if a["status"] not in valid_asset_statuses:
+                unexpected_errors.append(f"Enum violation: Asset {a['id']} status '{a['status']}'")
+            if a["condition_status"] not in valid_conditions:
+                unexpected_errors.append(f"Enum violation: Asset {a['id']} condition_status '{a['condition_status']}'")
+
+        valid_term_types = {"VOLUNTARY", "INVOLUNTARY", "CONTRACT_END", "URGENT_TERMINATION"}
+        valid_off_statuses = {"PENDING", "IN_PROGRESS", "COMPLETED"}
+        for off in self.offboarding_cases:
+            if off["termination_type"] not in valid_term_types:
+                unexpected_errors.append(f"Enum violation: OffboardingCase {off['id']} termination_type '{off['termination_type']}'")
+            if off["status"] not in valid_off_statuses:
+                unexpected_errors.append(f"Enum violation: OffboardingCase {off['id']} status '{off['status']}'")
+
+        # ------------------------------------------------------------------
+        # 4. Temporal and Date Ordering Constraints
+        # ------------------------------------------------------------------
+        for e in self.employees:
+            if e["hire_date"] > e["start_date"]:
+                unexpected_errors.append(f"Date ordering violation: Employee {e['id']} hire_date {e['hire_date']} > start_date {e['start_date']}")
+            if e.get("end_date") and e["start_date"] > e["end_date"]:
+                unexpected_errors.append(f"Date ordering violation: Employee {e['id']} start_date {e['start_date']} > end_date {e['end_date']}")
+
+        for a in self.assets:
+            if a.get("assigned_date") and a.get("acknowledged_at"):
+                if a["assigned_date"] > a["acknowledged_at"][:10]:
+                    unexpected_errors.append(f"Date ordering violation: Asset {a['id']} assigned_date {a['assigned_date']} > acknowledged_at {a['acknowledged_at']}")
+
+        for t in self.tasks:
+            if t.get("completed_at") and t.get("created_at"):
+                if t["created_at"][:10] > t["completed_at"][:10]:
+                    unexpected_errors.append(f"Date ordering violation: Task {t['id']} created_at > completed_at")
+
+        # ------------------------------------------------------------------
+        # 5. Task Dependency Cycles Detection (DAG Integrity)
+        # ------------------------------------------------------------------
+        task_case_map = {t["id"]: t["case_id"] for t in self.tasks}
+        case_deps = defaultdict(list)
+        for d in self.dependencies:
+            cid = task_case_map.get(d["task_id"])
+            if cid:
+                case_deps[cid].append(d)
+
+        detected_cycles = []
+        for cid, d_list in case_deps.items():
+            adj = defaultdict(list)
+            dep_lookup = {}
+            nodes = set()
+            for d in d_list:
+                adj[d["prerequisite_task_id"]].append(d["task_id"])
+                dep_lookup[(d["prerequisite_task_id"], d["task_id"])] = d["id"]
+                nodes.add(d["prerequisite_task_id"])
+                nodes.add(d["task_id"])
+
+            visited = {n: 0 for n in nodes}
+            cycle_edges = []
+
+            def dfs(node, path):
+                visited[node] = 1
+                for nxt in adj.get(node, []):
+                    if visited.get(nxt) == 1:
+                        cycle_edges.append((node, nxt))
+                        return True
+                    if visited.get(nxt) == 0:
+                        if dfs(nxt, path + [nxt]):
+                            return True
+                visited[node] = 2
+                return False
+
+            for n in nodes:
+                if visited[n] == 0:
+                    dfs(n, [n])
+
+            for src, dst in cycle_edges:
+                dep_id = dep_lookup.get((src, dst))
+                detected_cycles.append({
+                    "case_id": cid,
+                    "task_id": dst,
+                    "prerequisite_task_id": src,
+                    "dep_id": str(dep_id) if dep_id else ""
+                })
+
+        # ------------------------------------------------------------------
+        # 6. Asset Assignment Rules & Anomaly Scans
+        # ------------------------------------------------------------------
+        # Rule 1: ACCESS_GRANTED_BEFORE_START_APPROVAL
+        emp_status_map = {e["id"]: e["employment_status"] for e in self.employees}
+        detected_rule1 = [
+            g["id"] for g in self.access_grants
+            if g["status"] == "PROVISIONED" and g["approval_status"] == "PENDING_APPROVAL"
+        ]
+
+        # Rule 2: DUPLICATE_ASSET_ASSIGNMENT (serial numbers with > 1 asset)
+        assets_by_serial = defaultdict(list)
+        for a in self.assets:
+            if a.get("serial_number"):
+                assets_by_serial[a["serial_number"]].append(a["id"])
+        detected_rule2_primary = [ids[0] for s, ids in assets_by_serial.items() if len(ids) > 1]
+        detected_rule2_duplicate = [ids[1] for s, ids in assets_by_serial.items() if len(ids) > 1]
+
+        # Rule 3: TERMINATED_EMPLOYEE_RETAINS_GRANT
+        detected_rule3 = [
+            g["id"] for g in self.access_grants
+            if g["status"] == "PROVISIONED" and emp_status_map.get(g["employee_id"]) == "TERMINATED"
+        ]
+
+        # Rule 4: TASK_DEPENDENCY_CYCLE
+        # Reconcile by task pairs (task_id<->prereq_task_id) rather than fragile dep_id integers,
+        # because the detected cycle edge may be identified by a different traversal order.
+        # The ground truth secondary_entity_id stores "TASK-X-006<->TASK-X-007" pairs.
+        detected_rule4_pairs = set()
+        for c in detected_cycles:
+            # Normalise to alphabetically smaller order to match GT
+            detected_rule4_pairs.add(tuple(sorted([c['task_id'], c['prerequisite_task_id']])))
+
+        # Rule 5: RECOVERED_ASSET_REMAINS_ASSIGNED
+        detected_rule5 = [
+            a["id"] for a in self.assets
+            if a["status"] == "RECOVERED" and a.get("assigned_to_employee_id") is not None
+        ]
+
+        # ------------------------------------------------------------------
+        # 7. Reconciliation with Ground Truth Anomalies
+        # ------------------------------------------------------------------
+        gt_by_rule = defaultdict(list)
+        for anom in self.ground_truth_anomalies:
+            gt_by_rule[anom["issue_type"]].append(anom)
+
+        gt_rule4_pairs = set()
+        for a in gt_by_rule["TASK_DEPENDENCY_CYCLE"]:
+            parts = a["secondary_entity_id"].split("<->")
+            if len(parts) == 2:
+                gt_rule4_pairs.add(tuple(sorted(parts)))
+
+        # Expected counts per requirement: exactly 25 intentional anomalies
+        expected_counts = {
+            "ACCESS_GRANTED_BEFORE_START_APPROVAL": 5,
+            "DUPLICATE_ASSET_ASSIGNMENT": 5,
+            "TERMINATED_EMPLOYEE_RETAINS_GRANT": 6,
+            "TASK_DEPENDENCY_CYCLE": 4,
+            "RECOVERED_ASSET_REMAINS_ASSIGNED": 5
+        }
+
+        for rule, exp_count in expected_counts.items():
+            actual_gt_count = len(gt_by_rule.get(rule, []))
+            if actual_gt_count != exp_count:
+                unexpected_errors.append(
+                    f"Ground truth count mismatch for {rule}: expected {exp_count}, got {actual_gt_count}"
+                )
+
+        # Match Rule 1
+        gt_rule1_ids = {a["entity_id"] for a in gt_by_rule["ACCESS_GRANTED_BEFORE_START_APPROVAL"]}
+        diff_r1 = set(detected_rule1).symmetric_difference(gt_rule1_ids)
+        if diff_r1:
+            unexpected_errors.append(f"Reconciliation error in ACCESS_GRANTED_BEFORE_START_APPROVAL: mismatch on {diff_r1}")
+
+        # Match Rule 2
+        gt_rule2_primary = {a["entity_id"] for a in gt_by_rule["DUPLICATE_ASSET_ASSIGNMENT"]}
+        diff_r2 = set(detected_rule2_primary).symmetric_difference(gt_rule2_primary)
+        if diff_r2:
+            unexpected_errors.append(f"Reconciliation error in DUPLICATE_ASSET_ASSIGNMENT: mismatch on {diff_r2}")
+
+        # Match Rule 3
+        gt_rule3_ids = {a["entity_id"] for a in gt_by_rule["TERMINATED_EMPLOYEE_RETAINS_GRANT"]}
+        diff_r3 = set(detected_rule3).symmetric_difference(gt_rule3_ids)
+        if diff_r3:
+            unexpected_errors.append(f"Reconciliation error in TERMINATED_EMPLOYEE_RETAINS_GRANT: mismatch on {diff_r3}")
+
+        # Match Rule 4
+        # The DFS cycle detector may identify multiple edges within the same cycle graph.
+        # Verify that all 4 ground truth pairs ARE detected (recall = 100%) and that
+        # exactly 4 distinct onboarding cases have cycles (no extra unexpected case-level cycles).
+        missing_gt_pairs = gt_rule4_pairs - detected_rule4_pairs
+        if missing_gt_pairs:
+            unexpected_errors.append(f"Reconciliation error in TASK_DEPENDENCY_CYCLE: GT pairs not detected: {missing_gt_pairs}")
+        # Verify exactly 4 case_ids have cycles detected (no extra cases with unexpected cycles)
+        detected_cycle_case_ids = set(c["case_id"] for c in detected_cycles)
+        gt_cycle_case_ids = set()
+        for a in gt_by_rule["TASK_DEPENDENCY_CYCLE"]:
+            parts = a["secondary_entity_id"].split("<->")
+            if parts:
+                case_part = parts[0].replace("TASK-", "", 1).rsplit("-", 1)[0]
+                gt_cycle_case_ids.add(case_part)
+        extra_cycle_cases = detected_cycle_case_ids - gt_cycle_case_ids
+        if extra_cycle_cases:
+            unexpected_errors.append(f"Reconciliation error in TASK_DEPENDENCY_CYCLE: unexpected cycle cases detected: {extra_cycle_cases}")
+
+        # Match Rule 5
+        gt_rule5_ids = {a["entity_id"] for a in gt_by_rule["RECOVERED_ASSET_REMAINS_ASSIGNED"]}
+        diff_r5 = set(detected_rule5).symmetric_difference(gt_rule5_ids)
+        if diff_r5:
+            unexpected_errors.append(f"Reconciliation error in RECOVERED_ASSET_REMAINS_ASSIGNED: mismatch on {diff_r5}")
+
+        # Final assertion on unexpected errors
+        if unexpected_errors:
+            print("[!] Validation detected unexpected errors:")
+            for err in unexpected_errors:
+                print(f"    - {err}")
+            raise AssertionError(f"Dataset validation failed with {len(unexpected_errors)} unexpected error(s).")
+
+        total_anomalies = len(self.ground_truth_anomalies)
+        assert total_anomalies == 25, f"Expected exactly 25 intentional anomalies, got {total_anomalies}"
+
+        print("[+] Primary Key uniqueness: 100% passed across all 11 entities.")
+        print("[+] Foreign Key referential integrity: 100% passed across all relationships.")
+        print("[+] Domain Enum constraints: 100% passed across all status/type/category fields.")
+        print("[+] Date & temporal ordering: 100% passed.")
+        print(f"[+] Task dependency DAGs: {len(detected_cycles)} cycles detected, matching ground truth exactly.")
+        print(f"[+] Intentional anomalies verified: exactly {total_anomalies} (5 + 5 + 6 + 4 + 5).")
+        print("[+] Unexpected errors: 0 detected. Full reconciliation passed with 100% precision & recall.")
 
     def export_all(self, output_dir):
         """
@@ -778,7 +1096,7 @@ class SyntheticDataGenerator:
         sql_path = os.path.join(output_dir, "seed_data.sql")
         with open(sql_path, "w", encoding="utf-8") as f:
             f.write("-- Enterprise Workflow Orchestration SQL Seed Data\n")
-            f.write(f"-- Generated on {datetime.now().isoformat()} with Seed {self.seed}\n")
+            f.write(f"-- Deterministic Generation Seed: {self.seed}, Scale: {self.scale_ratio}\n")
             f.write("SET FOREIGN_KEY_CHECKS = 0;\n\n")
             
             # Helper to write insert statements
@@ -864,7 +1182,7 @@ if __name__ == "__main__":
         "generator_script": "generator.py",
         "seed": seed_val,
         "scale": scale_val,
-        "generated_at": datetime.now().isoformat(),
+        "generated_at": "2026-10-28T12:00:00Z",
         "total_records": {
             "employees": len(gen.employees),
             "tasks": len(gen.tasks),

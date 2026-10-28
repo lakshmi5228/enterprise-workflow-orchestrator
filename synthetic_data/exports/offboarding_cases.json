@@ -2,7 +2,7 @@
   {
     "id": "OFF-2026-000001",
     "employee_id": "EMP-000004",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-06",
     "hr_owner_id": "EMP-000006",
@@ -13,7 +13,7 @@
   {
     "id": "OFF-2026-000002",
     "employee_id": "EMP-000006",
-    "termination_type": "VOLUNTARY",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-07-23",
     "hr_owner_id": "EMP-000006",
@@ -24,7 +24,7 @@
   {
     "id": "OFF-2026-000003",
     "employee_id": "EMP-000008",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "URGENT_TERMINATION",
     "status": "COMPLETED",
     "last_working_day": "2025-11-11",
     "hr_owner_id": "EMP-000006",
@@ -35,7 +35,7 @@
   {
     "id": "OFF-2026-000004",
     "employee_id": "EMP-000014",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-03",
     "hr_owner_id": "EMP-000006",
@@ -101,7 +101,7 @@
   {
     "id": "OFF-2026-000010",
     "employee_id": "EMP-000059",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-01-14",
     "hr_owner_id": "EMP-000006",
@@ -112,7 +112,7 @@
   {
     "id": "OFF-2026-000011",
     "employee_id": "EMP-000063",
-    "termination_type": "VOLUNTARY",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-06-18",
     "hr_owner_id": "EMP-000006",
@@ -123,7 +123,7 @@
   {
     "id": "OFF-2026-000012",
     "employee_id": "EMP-000066",
-    "termination_type": "URGENT_TERMINATION",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-22",
     "hr_owner_id": "EMP-000006",
@@ -134,7 +134,7 @@
   {
     "id": "OFF-2026-000013",
     "employee_id": "EMP-000069",
-    "termination_type": "URGENT_TERMINATION",
+    "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-16",
     "hr_owner_id": "EMP-000006",
@@ -145,7 +145,7 @@
   {
     "id": "OFF-2026-000014",
     "employee_id": "EMP-000071",
-    "termination_type": "VOLUNTARY",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-03-01",
     "hr_owner_id": "EMP-000006",
@@ -167,7 +167,7 @@
   {
     "id": "OFF-2026-000016",
     "employee_id": "EMP-000089",
-    "termination_type": "INVOLUNTARY",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-05-21",
     "hr_owner_id": "EMP-000006",
@@ -178,7 +178,7 @@
   {
     "id": "OFF-2026-000017",
     "employee_id": "EMP-000091",
-    "termination_type": "VOLUNTARY",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-05-13",
     "hr_owner_id": "EMP-000006",
@@ -189,7 +189,7 @@
   {
     "id": "OFF-2026-000018",
     "employee_id": "EMP-000099",
-    "termination_type": "VOLUNTARY",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-10-03",
     "hr_owner_id": "EMP-000006",
@@ -222,7 +222,7 @@
   {
     "id": "OFF-2026-000021",
     "employee_id": "EMP-000124",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-05-21",
     "hr_owner_id": "EMP-000006",
@@ -233,7 +233,7 @@
   {
     "id": "OFF-2026-000022",
     "employee_id": "EMP-000129",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-03-05",
     "hr_owner_id": "EMP-000006",
@@ -244,7 +244,7 @@
   {
     "id": "OFF-2026-000023",
     "employee_id": "EMP-000142",
-    "termination_type": "INVOLUNTARY",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-22",
     "hr_owner_id": "EMP-000006",
@@ -255,7 +255,7 @@
   {
     "id": "OFF-2026-000024",
     "employee_id": "EMP-000146",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-30",
     "hr_owner_id": "EMP-000006",
@@ -288,61 +288,39 @@
   {
     "id": "OFF-2026-000027",
     "employee_id": "EMP-000153",
-    "termination_type": "INVOLUNTARY",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
-    "last_working_day": "2026-10-04",
+    "last_working_day": "2026-12-20",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-10-04T08:00:00",
-    "completed_at": "2026-10-04T18:00:00"
+    "created_at": "2026-12-20T08:00:00",
+    "completed_at": "2026-12-20T18:00:00"
   },
   {
     "id": "OFF-2026-000028",
-    "employee_id": "EMP-000157",
+    "employee_id": "EMP-000169",
     "termination_type": "INVOLUNTARY",
-    "status": "IN_PROGRESS",
-    "last_working_day": "2026-11-12",
+    "status": "COMPLETED",
+    "last_working_day": "2026-04-15",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-11-12T08:00:00",
-    "completed_at": null
+    "created_at": "2026-04-15T08:00:00",
+    "completed_at": "2026-04-15T18:00:00"
   },
   {
     "id": "OFF-2026-000029",
-    "employee_id": "EMP-000162",
+    "employee_id": "EMP-000176",
     "termination_type": "INVOLUNTARY",
-    "status": "COMPLETED",
-    "last_working_day": "2026-10-17",
+    "status": "IN_PROGRESS",
+    "last_working_day": "2026-11-03",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-10-17T08:00:00",
-    "completed_at": "2026-10-17T18:00:00"
+    "created_at": "2026-11-03T08:00:00",
+    "completed_at": null
   },
   {
     "id": "OFF-2026-000030",
-    "employee_id": "EMP-000163",
-    "termination_type": "INVOLUNTARY",
-    "status": "COMPLETED",
-    "last_working_day": "2026-04-19",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2026-04-19T08:00:00",
-    "completed_at": "2026-04-19T18:00:00"
-  },
-  {
-    "id": "OFF-2026-000031",
-    "employee_id": "EMP-000178",
-    "termination_type": "VOLUNTARY",
-    "status": "COMPLETED",
-    "last_working_day": "2026-09-05",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2026-09-05T08:00:00",
-    "completed_at": "2026-09-05T18:00:00"
-  },
-  {
-    "id": "OFF-2026-000032",
-    "employee_id": "EMP-000182",
+    "employee_id": "EMP-000181",
     "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-28",
@@ -352,9 +330,9 @@
     "completed_at": "2026-09-28T18:00:00"
   },
   {
-    "id": "OFF-2026-000033",
-    "employee_id": "EMP-000187",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000031",
+    "employee_id": "EMP-000186",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-08-24",
     "hr_owner_id": "EMP-000006",
@@ -363,8 +341,8 @@
     "completed_at": "2026-08-24T18:00:00"
   },
   {
-    "id": "OFF-2026-000034",
-    "employee_id": "EMP-000195",
+    "id": "OFF-2026-000032",
+    "employee_id": "EMP-000194",
     "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-15",
@@ -374,9 +352,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000035",
-    "employee_id": "EMP-000198",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000033",
+    "employee_id": "EMP-000197",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-22",
     "hr_owner_id": "EMP-000006",
@@ -385,8 +363,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000036",
-    "employee_id": "EMP-000210",
+    "id": "OFF-2026-000034",
+    "employee_id": "EMP-000209",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-01-26",
@@ -396,8 +374,8 @@
     "completed_at": "2026-01-26T18:00:00"
   },
   {
-    "id": "OFF-2026-000037",
-    "employee_id": "EMP-000234",
+    "id": "OFF-2026-000035",
+    "employee_id": "EMP-000233",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-17",
@@ -407,9 +385,9 @@
     "completed_at": "2026-10-17T18:00:00"
   },
   {
-    "id": "OFF-2026-000038",
-    "employee_id": "EMP-000236",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000036",
+    "employee_id": "EMP-000235",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-07",
     "hr_owner_id": "EMP-000006",
@@ -418,8 +396,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000039",
-    "employee_id": "EMP-000243",
+    "id": "OFF-2026-000037",
+    "employee_id": "EMP-000242",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-17",
@@ -429,9 +407,9 @@
     "completed_at": "2026-09-17T18:00:00"
   },
   {
-    "id": "OFF-2026-000040",
-    "employee_id": "EMP-000247",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000038",
+    "employee_id": "EMP-000246",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-09",
     "hr_owner_id": "EMP-000006",
@@ -440,8 +418,8 @@
     "completed_at": "2026-10-09T18:00:00"
   },
   {
-    "id": "OFF-2026-000041",
-    "employee_id": "EMP-000251",
+    "id": "OFF-2026-000039",
+    "employee_id": "EMP-000250",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-12-26",
@@ -451,8 +429,8 @@
     "completed_at": "2025-12-26T18:00:00"
   },
   {
-    "id": "OFF-2026-000042",
-    "employee_id": "EMP-000253",
+    "id": "OFF-2026-000040",
+    "employee_id": "EMP-000252",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-08-16",
@@ -462,8 +440,8 @@
     "completed_at": "2026-08-16T18:00:00"
   },
   {
-    "id": "OFF-2026-000043",
-    "employee_id": "EMP-000260",
+    "id": "OFF-2026-000041",
+    "employee_id": "EMP-000259",
     "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-16",
@@ -473,9 +451,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000044",
-    "employee_id": "EMP-000264",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000042",
+    "employee_id": "EMP-000263",
+    "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-17",
     "hr_owner_id": "EMP-000006",
@@ -484,9 +462,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000045",
-    "employee_id": "EMP-000278",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000043",
+    "employee_id": "EMP-000277",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-05-12",
     "hr_owner_id": "EMP-000006",
@@ -495,9 +473,9 @@
     "completed_at": "2026-05-12T18:00:00"
   },
   {
-    "id": "OFF-2026-000046",
-    "employee_id": "EMP-000280",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000044",
+    "employee_id": "EMP-000279",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-18",
     "hr_owner_id": "EMP-000006",
@@ -506,9 +484,9 @@
     "completed_at": "2026-10-18T18:00:00"
   },
   {
-    "id": "OFF-2026-000047",
-    "employee_id": "EMP-000287",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000045",
+    "employee_id": "EMP-000286",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-03-19",
     "hr_owner_id": "EMP-000006",
@@ -517,9 +495,9 @@
     "completed_at": "2026-03-19T18:00:00"
   },
   {
-    "id": "OFF-2026-000048",
-    "employee_id": "EMP-000313",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000046",
+    "employee_id": "EMP-000312",
+    "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-22",
     "hr_owner_id": "EMP-000006",
@@ -528,9 +506,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000049",
-    "employee_id": "EMP-000318",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000047",
+    "employee_id": "EMP-000317",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-10-04",
     "hr_owner_id": "EMP-000006",
@@ -539,9 +517,9 @@
     "completed_at": "2026-10-04T18:00:00"
   },
   {
-    "id": "OFF-2026-000050",
-    "employee_id": "EMP-000332",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000048",
+    "employee_id": "EMP-000331",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-19",
     "hr_owner_id": "EMP-000006",
@@ -550,9 +528,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000051",
-    "employee_id": "EMP-000347",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000049",
+    "employee_id": "EMP-000346",
+    "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-24",
     "hr_owner_id": "EMP-000006",
@@ -561,8 +539,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000052",
-    "employee_id": "EMP-000349",
+    "id": "OFF-2026-000050",
+    "employee_id": "EMP-000348",
     "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-12",
@@ -572,8 +550,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000053",
-    "employee_id": "EMP-000357",
+    "id": "OFF-2026-000051",
+    "employee_id": "EMP-000356",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-26",
@@ -583,8 +561,8 @@
     "completed_at": "2026-09-26T18:00:00"
   },
   {
-    "id": "OFF-2026-000054",
-    "employee_id": "EMP-000360",
+    "id": "OFF-2026-000052",
+    "employee_id": "EMP-000359",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-01-22",
@@ -594,8 +572,8 @@
     "completed_at": "2026-01-22T18:00:00"
   },
   {
-    "id": "OFF-2026-000055",
-    "employee_id": "EMP-000362",
+    "id": "OFF-2026-000053",
+    "employee_id": "EMP-000361",
     "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-06",
@@ -605,9 +583,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000056",
-    "employee_id": "EMP-000379",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000054",
+    "employee_id": "EMP-000378",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-02",
     "hr_owner_id": "EMP-000006",
@@ -616,9 +594,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000057",
-    "employee_id": "EMP-000397",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000055",
+    "employee_id": "EMP-000396",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-07",
     "hr_owner_id": "EMP-000006",
@@ -627,8 +605,8 @@
     "completed_at": "2026-09-07T18:00:00"
   },
   {
-    "id": "OFF-2026-000058",
-    "employee_id": "EMP-000405",
+    "id": "OFF-2026-000056",
+    "employee_id": "EMP-000404",
     "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-05",
@@ -638,9 +616,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000059",
-    "employee_id": "EMP-000407",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000057",
+    "employee_id": "EMP-000406",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-23",
     "hr_owner_id": "EMP-000006",
@@ -649,9 +627,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000060",
-    "employee_id": "EMP-000411",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000058",
+    "employee_id": "EMP-000410",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-12-22",
     "hr_owner_id": "EMP-000006",
@@ -660,8 +638,8 @@
     "completed_at": "2025-12-22T18:00:00"
   },
   {
-    "id": "OFF-2026-000061",
-    "employee_id": "EMP-000417",
+    "id": "OFF-2026-000059",
+    "employee_id": "EMP-000416",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-11-22",
@@ -671,9 +649,9 @@
     "completed_at": "2025-11-22T18:00:00"
   },
   {
-    "id": "OFF-2026-000062",
-    "employee_id": "EMP-000425",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000060",
+    "employee_id": "EMP-000424",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-27",
     "hr_owner_id": "EMP-000006",
@@ -682,9 +660,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000063",
-    "employee_id": "EMP-000430",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000061",
+    "employee_id": "EMP-000429",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-05",
     "hr_owner_id": "EMP-000006",
@@ -693,9 +671,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000064",
-    "employee_id": "EMP-000441",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000062",
+    "employee_id": "EMP-000440",
+    "termination_type": "URGENT_TERMINATION",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-12",
     "hr_owner_id": "EMP-000006",
@@ -704,9 +682,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000065",
-    "employee_id": "EMP-000451",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000063",
+    "employee_id": "EMP-000450",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-12-05",
     "hr_owner_id": "EMP-000006",
@@ -715,9 +693,9 @@
     "completed_at": "2025-12-05T18:00:00"
   },
   {
-    "id": "OFF-2026-000066",
-    "employee_id": "EMP-000455",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000064",
+    "employee_id": "EMP-000454",
+    "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-08",
     "hr_owner_id": "EMP-000006",
@@ -726,9 +704,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000067",
-    "employee_id": "EMP-000457",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000065",
+    "employee_id": "EMP-000456",
+    "termination_type": "URGENT_TERMINATION",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-02",
     "hr_owner_id": "EMP-000006",
@@ -737,9 +715,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000068",
-    "employee_id": "EMP-000469",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000066",
+    "employee_id": "EMP-000468",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-07-23",
     "hr_owner_id": "EMP-000006",
@@ -748,9 +726,9 @@
     "completed_at": "2026-07-23T18:00:00"
   },
   {
-    "id": "OFF-2026-000069",
-    "employee_id": "EMP-000471",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000067",
+    "employee_id": "EMP-000470",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-05-04",
     "hr_owner_id": "EMP-000006",
@@ -759,9 +737,9 @@
     "completed_at": "2026-05-04T18:00:00"
   },
   {
-    "id": "OFF-2026-000070",
-    "employee_id": "EMP-000483",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000068",
+    "employee_id": "EMP-000482",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-03-18",
     "hr_owner_id": "EMP-000006",
@@ -770,9 +748,9 @@
     "completed_at": "2026-03-18T18:00:00"
   },
   {
-    "id": "OFF-2026-000071",
-    "employee_id": "EMP-000498",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000069",
+    "employee_id": "EMP-000497",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-07-08",
     "hr_owner_id": "EMP-000006",
@@ -781,9 +759,9 @@
     "completed_at": "2025-07-08T18:00:00"
   },
   {
-    "id": "OFF-2026-000072",
-    "employee_id": "EMP-000504",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000070",
+    "employee_id": "EMP-000503",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-24",
     "hr_owner_id": "EMP-000006",
@@ -792,9 +770,9 @@
     "completed_at": "2026-10-24T18:00:00"
   },
   {
-    "id": "OFF-2026-000073",
-    "employee_id": "EMP-000512",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000071",
+    "employee_id": "EMP-000511",
+    "termination_type": "URGENT_TERMINATION",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-20",
     "hr_owner_id": "EMP-000006",
@@ -803,8 +781,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000074",
-    "employee_id": "EMP-000514",
+    "id": "OFF-2026-000072",
+    "employee_id": "EMP-000513",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-16",
@@ -814,9 +792,9 @@
     "completed_at": "2026-10-16T18:00:00"
   },
   {
-    "id": "OFF-2026-000075",
-    "employee_id": "EMP-000524",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000073",
+    "employee_id": "EMP-000523",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2025-10-08",
     "hr_owner_id": "EMP-000006",
@@ -825,9 +803,9 @@
     "completed_at": "2025-10-08T18:00:00"
   },
   {
-    "id": "OFF-2026-000076",
-    "employee_id": "EMP-000525",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000074",
+    "employee_id": "EMP-000524",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-17",
     "hr_owner_id": "EMP-000006",
@@ -836,8 +814,8 @@
     "completed_at": "2026-09-17T18:00:00"
   },
   {
-    "id": "OFF-2026-000077",
-    "employee_id": "EMP-000537",
+    "id": "OFF-2026-000075",
+    "employee_id": "EMP-000536",
     "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-22",
@@ -847,8 +825,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000078",
-    "employee_id": "EMP-000538",
+    "id": "OFF-2026-000076",
+    "employee_id": "EMP-000537",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-09-17",
@@ -858,9 +836,9 @@
     "completed_at": "2026-09-17T18:00:00"
   },
   {
-    "id": "OFF-2026-000079",
-    "employee_id": "EMP-000540",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000077",
+    "employee_id": "EMP-000539",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-09-17",
     "hr_owner_id": "EMP-000006",
@@ -869,8 +847,8 @@
     "completed_at": "2026-09-17T18:00:00"
   },
   {
-    "id": "OFF-2026-000080",
-    "employee_id": "EMP-000542",
+    "id": "OFF-2026-000078",
+    "employee_id": "EMP-000541",
     "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-17",
@@ -880,9 +858,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000081",
-    "employee_id": "EMP-000567",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000079",
+    "employee_id": "EMP-000566",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-11-05",
     "hr_owner_id": "EMP-000006",
@@ -891,19 +869,41 @@
     "completed_at": "2025-11-05T18:00:00"
   },
   {
-    "id": "OFF-2026-000082",
-    "employee_id": "EMP-000571",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000080",
+    "employee_id": "EMP-000570",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
-    "last_working_day": "2026-10-05",
+    "last_working_day": "2026-12-28",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-10-05T08:00:00",
-    "completed_at": "2026-10-05T18:00:00"
+    "created_at": "2026-12-28T08:00:00",
+    "completed_at": "2026-12-28T18:00:00"
+  },
+  {
+    "id": "OFF-2026-000081",
+    "employee_id": "EMP-000576",
+    "termination_type": "INVOLUNTARY",
+    "status": "IN_PROGRESS",
+    "last_working_day": "2026-11-16",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2026-11-16T08:00:00",
+    "completed_at": null
+  },
+  {
+    "id": "OFF-2026-000082",
+    "employee_id": "EMP-000581",
+    "termination_type": "INVOLUNTARY",
+    "status": "COMPLETED",
+    "last_working_day": "2025-08-16",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2025-08-16T08:00:00",
+    "completed_at": "2025-08-16T18:00:00"
   },
   {
     "id": "OFF-2026-000083",
-    "employee_id": "EMP-000577",
+    "employee_id": "EMP-000594",
     "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-16",
@@ -914,30 +914,8 @@
   },
   {
     "id": "OFF-2026-000084",
-    "employee_id": "EMP-000582",
-    "termination_type": "VOLUNTARY",
-    "status": "COMPLETED",
-    "last_working_day": "2025-08-16",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2025-08-16T08:00:00",
-    "completed_at": "2025-08-16T18:00:00"
-  },
-  {
-    "id": "OFF-2026-000085",
     "employee_id": "EMP-000595",
-    "termination_type": "CONTRACT_END",
-    "status": "IN_PROGRESS",
-    "last_working_day": "2026-11-16",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2026-11-16T08:00:00",
-    "completed_at": null
-  },
-  {
-    "id": "OFF-2026-000086",
-    "employee_id": "EMP-000596",
-    "termination_type": "CONTRACT_END",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-10-12",
     "hr_owner_id": "EMP-000006",
@@ -946,9 +924,9 @@
     "completed_at": "2026-10-12T18:00:00"
   },
   {
-    "id": "OFF-2026-000087",
-    "employee_id": "EMP-000615",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000085",
+    "employee_id": "EMP-000614",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-07-03",
     "hr_owner_id": "EMP-000006",
@@ -957,9 +935,9 @@
     "completed_at": "2025-07-03T18:00:00"
   },
   {
-    "id": "OFF-2026-000088",
-    "employee_id": "EMP-000619",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000086",
+    "employee_id": "EMP-000618",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-25",
     "hr_owner_id": "EMP-000006",
@@ -968,8 +946,8 @@
     "completed_at": "2026-09-25T18:00:00"
   },
   {
-    "id": "OFF-2026-000089",
-    "employee_id": "EMP-000629",
+    "id": "OFF-2026-000087",
+    "employee_id": "EMP-000628",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-09-02",
@@ -979,9 +957,9 @@
     "completed_at": "2025-09-02T18:00:00"
   },
   {
-    "id": "OFF-2026-000090",
-    "employee_id": "EMP-000634",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000088",
+    "employee_id": "EMP-000633",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-10-18",
     "hr_owner_id": "EMP-000006",
@@ -990,8 +968,8 @@
     "completed_at": "2026-10-18T18:00:00"
   },
   {
-    "id": "OFF-2026-000091",
-    "employee_id": "EMP-000636",
+    "id": "OFF-2026-000089",
+    "employee_id": "EMP-000635",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-05-27",
@@ -1001,20 +979,20 @@
     "completed_at": "2026-05-27T18:00:00"
   },
   {
-    "id": "OFF-2026-000092",
-    "employee_id": "EMP-000641",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000090",
+    "employee_id": "EMP-000640",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
-    "last_working_day": "2026-09-20",
+    "last_working_day": "2027-02-28",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-09-20T08:00:00",
-    "completed_at": "2026-09-20T18:00:00"
+    "created_at": "2027-02-28T08:00:00",
+    "completed_at": "2027-02-28T18:00:00"
   },
   {
-    "id": "OFF-2026-000093",
-    "employee_id": "EMP-000676",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000091",
+    "employee_id": "EMP-000675",
+    "termination_type": "URGENT_TERMINATION",
     "status": "COMPLETED",
     "last_working_day": "2026-10-06",
     "hr_owner_id": "EMP-000006",
@@ -1023,9 +1001,9 @@
     "completed_at": "2026-10-06T18:00:00"
   },
   {
-    "id": "OFF-2026-000094",
-    "employee_id": "EMP-000679",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000092",
+    "employee_id": "EMP-000678",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-09-18",
     "hr_owner_id": "EMP-000006",
@@ -1034,9 +1012,9 @@
     "completed_at": "2026-09-18T18:00:00"
   },
   {
-    "id": "OFF-2026-000095",
-    "employee_id": "EMP-000681",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000093",
+    "employee_id": "EMP-000680",
+    "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-06",
     "hr_owner_id": "EMP-000006",
@@ -1045,9 +1023,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000096",
-    "employee_id": "EMP-000685",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000094",
+    "employee_id": "EMP-000684",
+    "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-25",
     "hr_owner_id": "EMP-000006",
@@ -1056,8 +1034,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000097",
-    "employee_id": "EMP-000687",
+    "id": "OFF-2026-000095",
+    "employee_id": "EMP-000686",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-17",
@@ -1067,8 +1045,8 @@
     "completed_at": "2026-09-17T18:00:00"
   },
   {
-    "id": "OFF-2026-000098",
-    "employee_id": "EMP-000699",
+    "id": "OFF-2026-000096",
+    "employee_id": "EMP-000698",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-04-01",
@@ -1078,9 +1056,9 @@
     "completed_at": "2026-04-01T18:00:00"
   },
   {
-    "id": "OFF-2026-000099",
-    "employee_id": "EMP-000713",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000097",
+    "employee_id": "EMP-000712",
+    "termination_type": "URGENT_TERMINATION",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-10",
     "hr_owner_id": "EMP-000006",
@@ -1089,9 +1067,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000100",
-    "employee_id": "EMP-000714",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000098",
+    "employee_id": "EMP-000713",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-09-06",
     "hr_owner_id": "EMP-000006",
@@ -1100,9 +1078,9 @@
     "completed_at": "2026-09-06T18:00:00"
   },
   {
-    "id": "OFF-2026-000101",
-    "employee_id": "EMP-000728",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000099",
+    "employee_id": "EMP-000727",
+    "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-23",
     "hr_owner_id": "EMP-000006",
@@ -1111,8 +1089,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000102",
-    "employee_id": "EMP-000737",
+    "id": "OFF-2026-000100",
+    "employee_id": "EMP-000736",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-09-16",
@@ -1122,9 +1100,9 @@
     "completed_at": "2026-09-16T18:00:00"
   },
   {
-    "id": "OFF-2026-000103",
-    "employee_id": "EMP-000744",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000101",
+    "employee_id": "EMP-000743",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-02-06",
     "hr_owner_id": "EMP-000006",
@@ -1133,9 +1111,9 @@
     "completed_at": "2026-02-06T18:00:00"
   },
   {
-    "id": "OFF-2026-000104",
-    "employee_id": "EMP-000753",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000102",
+    "employee_id": "EMP-000752",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-06-08",
     "hr_owner_id": "EMP-000006",
@@ -1144,9 +1122,9 @@
     "completed_at": "2025-06-08T18:00:00"
   },
   {
-    "id": "OFF-2026-000105",
-    "employee_id": "EMP-000761",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000103",
+    "employee_id": "EMP-000760",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-09-12",
     "hr_owner_id": "EMP-000006",
@@ -1155,9 +1133,9 @@
     "completed_at": "2026-09-12T18:00:00"
   },
   {
-    "id": "OFF-2026-000106",
-    "employee_id": "EMP-000766",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000104",
+    "employee_id": "EMP-000765",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-03-05",
     "hr_owner_id": "EMP-000006",
@@ -1166,9 +1144,9 @@
     "completed_at": "2026-03-05T18:00:00"
   },
   {
-    "id": "OFF-2026-000107",
-    "employee_id": "EMP-000779",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000105",
+    "employee_id": "EMP-000778",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-08-24",
     "hr_owner_id": "EMP-000006",
@@ -1177,8 +1155,8 @@
     "completed_at": "2026-08-24T18:00:00"
   },
   {
-    "id": "OFF-2026-000108",
-    "employee_id": "EMP-000801",
+    "id": "OFF-2026-000106",
+    "employee_id": "EMP-000800",
     "termination_type": "INVOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-04",
@@ -1188,75 +1166,64 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000109",
-    "employee_id": "EMP-000808",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000107",
+    "employee_id": "EMP-000807",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
-    "last_working_day": "2026-09-20",
+    "last_working_day": "2027-01-12",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-09-20T08:00:00",
-    "completed_at": "2026-09-20T18:00:00"
+    "created_at": "2027-01-12T08:00:00",
+    "completed_at": "2027-01-12T18:00:00"
+  },
+  {
+    "id": "OFF-2026-000108",
+    "employee_id": "EMP-000813",
+    "termination_type": "CONTRACT_END",
+    "status": "COMPLETED",
+    "last_working_day": "2026-10-19",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2026-10-19T08:00:00",
+    "completed_at": "2026-10-19T18:00:00"
+  },
+  {
+    "id": "OFF-2026-000109",
+    "employee_id": "EMP-000819",
+    "termination_type": "CONTRACT_END",
+    "status": "IN_PROGRESS",
+    "last_working_day": "2026-11-21",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2026-11-21T08:00:00",
+    "completed_at": null
   },
   {
     "id": "OFF-2026-000110",
-    "employee_id": "EMP-000809",
+    "employee_id": "EMP-000820",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
-    "last_working_day": "2026-10-21",
+    "last_working_day": "2026-03-03",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-10-21T08:00:00",
-    "completed_at": "2026-10-21T18:00:00"
+    "created_at": "2026-03-03T08:00:00",
+    "completed_at": "2026-03-03T18:00:00"
   },
   {
     "id": "OFF-2026-000111",
-    "employee_id": "EMP-000813",
-    "termination_type": "INVOLUNTARY",
-    "status": "COMPLETED",
-    "last_working_day": "2026-10-27",
+    "employee_id": "EMP-000835",
+    "termination_type": "CONTRACT_END",
+    "status": "IN_PROGRESS",
+    "last_working_day": "2026-11-26",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-10-27T08:00:00",
-    "completed_at": "2026-10-27T18:00:00"
+    "created_at": "2026-11-26T08:00:00",
+    "completed_at": null
   },
   {
     "id": "OFF-2026-000112",
-    "employee_id": "EMP-000816",
-    "termination_type": "INVOLUNTARY",
-    "status": "IN_PROGRESS",
-    "last_working_day": "2026-11-26",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2026-11-26T08:00:00",
-    "completed_at": null
-  },
-  {
-    "id": "OFF-2026-000113",
-    "employee_id": "EMP-000824",
+    "employee_id": "EMP-000838",
     "termination_type": "CONTRACT_END",
-    "status": "IN_PROGRESS",
-    "last_working_day": "2026-11-24",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2026-11-24T08:00:00",
-    "completed_at": null
-  },
-  {
-    "id": "OFF-2026-000114",
-    "employee_id": "EMP-000837",
-    "termination_type": "VOLUNTARY",
-    "status": "IN_PROGRESS",
-    "last_working_day": "2026-11-26",
-    "hr_owner_id": "EMP-000006",
-    "it_owner_id": "EMP-000008",
-    "created_at": "2026-11-26T08:00:00",
-    "completed_at": null
-  },
-  {
-    "id": "OFF-2026-000115",
-    "employee_id": "EMP-000840",
-    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-02",
     "hr_owner_id": "EMP-000006",
@@ -1265,8 +1232,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000116",
-    "employee_id": "EMP-000855",
+    "id": "OFF-2026-000113",
+    "employee_id": "EMP-000853",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-06-21",
@@ -1276,9 +1243,9 @@
     "completed_at": "2026-06-21T18:00:00"
   },
   {
-    "id": "OFF-2026-000117",
-    "employee_id": "EMP-000875",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000114",
+    "employee_id": "EMP-000873",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-10-12",
     "hr_owner_id": "EMP-000006",
@@ -1287,9 +1254,9 @@
     "completed_at": "2026-10-12T18:00:00"
   },
   {
-    "id": "OFF-2026-000118",
-    "employee_id": "EMP-000880",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000115",
+    "employee_id": "EMP-000878",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-10-25",
     "hr_owner_id": "EMP-000006",
@@ -1298,9 +1265,9 @@
     "completed_at": "2026-10-25T18:00:00"
   },
   {
-    "id": "OFF-2026-000119",
-    "employee_id": "EMP-000881",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000116",
+    "employee_id": "EMP-000879",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-04-14",
     "hr_owner_id": "EMP-000006",
@@ -1309,9 +1276,9 @@
     "completed_at": "2025-04-14T18:00:00"
   },
   {
-    "id": "OFF-2026-000120",
-    "employee_id": "EMP-000884",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000117",
+    "employee_id": "EMP-000882",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-07-27",
     "hr_owner_id": "EMP-000006",
@@ -1320,9 +1287,9 @@
     "completed_at": "2025-07-27T18:00:00"
   },
   {
-    "id": "OFF-2026-000121",
-    "employee_id": "EMP-000886",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000118",
+    "employee_id": "EMP-000884",
+    "termination_type": "URGENT_TERMINATION",
     "status": "COMPLETED",
     "last_working_day": "2026-05-27",
     "hr_owner_id": "EMP-000006",
@@ -1331,8 +1298,8 @@
     "completed_at": "2026-05-27T18:00:00"
   },
   {
-    "id": "OFF-2026-000122",
-    "employee_id": "EMP-000887",
+    "id": "OFF-2026-000119",
+    "employee_id": "EMP-000885",
     "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-13",
@@ -1342,9 +1309,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000123",
-    "employee_id": "EMP-000889",
-    "termination_type": "INVOLUNTARY",
+    "id": "OFF-2026-000120",
+    "employee_id": "EMP-000887",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-09-14",
     "hr_owner_id": "EMP-000006",
@@ -1353,9 +1320,9 @@
     "completed_at": "2026-09-14T18:00:00"
   },
   {
-    "id": "OFF-2026-000124",
-    "employee_id": "EMP-000894",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000121",
+    "employee_id": "EMP-000892",
+    "termination_type": "URGENT_TERMINATION",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-11",
     "hr_owner_id": "EMP-000006",
@@ -1364,9 +1331,9 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000125",
-    "employee_id": "EMP-000895",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000122",
+    "employee_id": "EMP-000893",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-10-23",
     "hr_owner_id": "EMP-000006",
@@ -1375,9 +1342,9 @@
     "completed_at": "2026-10-23T18:00:00"
   },
   {
-    "id": "OFF-2026-000126",
-    "employee_id": "EMP-000901",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000123",
+    "employee_id": "EMP-000899",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-08-30",
     "hr_owner_id": "EMP-000006",
@@ -1386,9 +1353,9 @@
     "completed_at": "2026-08-30T18:00:00"
   },
   {
-    "id": "OFF-2026-000127",
-    "employee_id": "EMP-000902",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000124",
+    "employee_id": "EMP-000900",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2025-08-06",
     "hr_owner_id": "EMP-000006",
@@ -1397,9 +1364,9 @@
     "completed_at": "2025-08-06T18:00:00"
   },
   {
-    "id": "OFF-2026-000128",
-    "employee_id": "EMP-000923",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000125",
+    "employee_id": "EMP-000921",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-03-01",
     "hr_owner_id": "EMP-000006",
@@ -1408,8 +1375,8 @@
     "completed_at": "2026-03-01T18:00:00"
   },
   {
-    "id": "OFF-2026-000129",
-    "employee_id": "EMP-000934",
+    "id": "OFF-2026-000126",
+    "employee_id": "EMP-000932",
     "termination_type": "CONTRACT_END",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-06",
@@ -1419,20 +1386,20 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000130",
-    "employee_id": "EMP-000941",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000127",
+    "employee_id": "EMP-000939",
+    "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
-    "last_working_day": "2026-09-25",
+    "last_working_day": "2027-03-03",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-09-25T08:00:00",
-    "completed_at": "2026-09-25T18:00:00"
+    "created_at": "2027-03-03T08:00:00",
+    "completed_at": "2027-03-03T18:00:00"
   },
   {
-    "id": "OFF-2026-000131",
-    "employee_id": "EMP-000950",
-    "termination_type": "URGENT_TERMINATION",
+    "id": "OFF-2026-000128",
+    "employee_id": "EMP-000948",
+    "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-06-12",
     "hr_owner_id": "EMP-000006",
@@ -1441,8 +1408,8 @@
     "completed_at": "2026-06-12T18:00:00"
   },
   {
-    "id": "OFF-2026-000132",
-    "employee_id": "EMP-000954",
+    "id": "OFF-2026-000129",
+    "employee_id": "EMP-000952",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-07-01",
@@ -1452,8 +1419,8 @@
     "completed_at": "2026-07-01T18:00:00"
   },
   {
-    "id": "OFF-2026-000133",
-    "employee_id": "EMP-000965",
+    "id": "OFF-2026-000130",
+    "employee_id": "EMP-000963",
     "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-09-21",
@@ -1463,8 +1430,8 @@
     "completed_at": "2025-09-21T18:00:00"
   },
   {
-    "id": "OFF-2026-000134",
-    "employee_id": "EMP-000973",
+    "id": "OFF-2026-000131",
+    "employee_id": "EMP-000971",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
     "last_working_day": "2026-05-02",
@@ -1474,9 +1441,9 @@
     "completed_at": "2026-05-02T18:00:00"
   },
   {
-    "id": "OFF-2026-000135",
-    "employee_id": "EMP-000976",
-    "termination_type": "VOLUNTARY",
+    "id": "OFF-2026-000132",
+    "employee_id": "EMP-000974",
+    "termination_type": "INVOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2026-05-07",
     "hr_owner_id": "EMP-000006",
@@ -1485,9 +1452,9 @@
     "completed_at": "2026-05-07T18:00:00"
   },
   {
-    "id": "OFF-2026-000136",
-    "employee_id": "EMP-000980",
-    "termination_type": "CONTRACT_END",
+    "id": "OFF-2026-000133",
+    "employee_id": "EMP-000978",
+    "termination_type": "VOLUNTARY",
     "status": "IN_PROGRESS",
     "last_working_day": "2026-11-18",
     "hr_owner_id": "EMP-000006",
@@ -1496,8 +1463,8 @@
     "completed_at": null
   },
   {
-    "id": "OFF-2026-000137",
-    "employee_id": "EMP-000987",
+    "id": "OFF-2026-000134",
+    "employee_id": "EMP-000985",
     "termination_type": "VOLUNTARY",
     "status": "COMPLETED",
     "last_working_day": "2025-10-13",
@@ -1507,25 +1474,58 @@
     "completed_at": "2025-10-13T18:00:00"
   },
   {
-    "id": "OFF-2026-000138",
-    "employee_id": "EMP-000988",
+    "id": "OFF-2026-000135",
+    "employee_id": "EMP-000986",
     "termination_type": "CONTRACT_END",
     "status": "COMPLETED",
-    "last_working_day": "2026-09-14",
+    "last_working_day": "2027-02-09",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-09-14T08:00:00",
-    "completed_at": "2026-09-14T18:00:00"
+    "created_at": "2027-02-09T08:00:00",
+    "completed_at": "2027-02-09T18:00:00"
+  },
+  {
+    "id": "OFF-2026-000136",
+    "employee_id": "EMP-000991",
+    "termination_type": "VOLUNTARY",
+    "status": "COMPLETED",
+    "last_working_day": "2026-03-31",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2026-03-31T08:00:00",
+    "completed_at": "2026-03-31T18:00:00"
+  },
+  {
+    "id": "OFF-2026-000137",
+    "employee_id": "EMP-000993",
+    "termination_type": "VOLUNTARY",
+    "status": "IN_PROGRESS",
+    "last_working_day": "2026-11-14",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2026-11-14T08:00:00",
+    "completed_at": null
+  },
+  {
+    "id": "OFF-2026-000138",
+    "employee_id": "EMP-000999",
+    "termination_type": "INVOLUNTARY",
+    "status": "IN_PROGRESS",
+    "last_working_day": "2026-11-16",
+    "hr_owner_id": "EMP-000006",
+    "it_owner_id": "EMP-000008",
+    "created_at": "2026-11-16T08:00:00",
+    "completed_at": null
   },
   {
     "id": "OFF-2026-000139",
-    "employee_id": "EMP-000990",
-    "termination_type": "INVOLUNTARY",
-    "status": "IN_PROGRESS",
-    "last_working_day": "2026-11-04",
+    "employee_id": "EMP-001000",
+    "termination_type": "VOLUNTARY",
+    "status": "COMPLETED",
+    "last_working_day": "2026-06-21",
     "hr_owner_id": "EMP-000006",
     "it_owner_id": "EMP-000008",
-    "created_at": "2026-11-04T08:00:00",
-    "completed_at": null
+    "created_at": "2026-06-21T08:00:00",
+    "completed_at": "2026-06-21T18:00:00"
   }
 ]
