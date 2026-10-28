@@ -1,0 +1,42 @@
+[
+  {
+    "id": "DEP-ENG",
+    "name": "Engineering",
+    "cost_center": "CC-ENG-101"
+  },
+  {
+    "id": "DEP-PROD",
+    "name": "Product Management",
+    "cost_center": "CC-PRD-102"
+  },
+  {
+    "id": "DEP-HR",
+    "name": "Human Resources",
+    "cost_center": "CC-HRS-103"
+  },
+  {
+    "id": "DEP-IT",
+    "name": "Information Technology",
+    "cost_center": "CC-ITS-104"
+  },
+  {
+    "id": "DEP-FIN",
+    "name": "Finance & Accounting",
+    "cost_center": "CC-FIN-105"
+  },
+  {
+    "id": "DEP-SALES",
+    "name": "Sales & Revenue",
+    "cost_center": "CC-SLS-106"
+  },
+  {
+    "id": "DEP-MKT",
+    "name": "Marketing & Brand",
+    "cost_center": "CC-MKT-107"
+  },
+  {
+    "id": "DEP-OPS",
+    "name": "Facilities & Operations",
+    "cost_center": "CC-OPS-108"
+  }
+]

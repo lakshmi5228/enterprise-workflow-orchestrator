@@ -1,0 +1,13 @@
+id,system_name,role_name,access_level,approval_required,requires_active_status
+ACC-ROLE-001,Active Directory,Domain User,STANDARD_USER,False,True
+ACC-ROLE-002,Okta,SSO Core Portal,STANDARD_USER,False,True
+ACC-ROLE-003,GitHub Enterprise,Source Code Contributor,STANDARD_USER,True,True
+ACC-ROLE-004,GitHub Enterprise,Repository Administrator,ADMIN,True,True
+ACC-ROLE-005,AWS Cloud,Production Deployer,POWER_USER,True,True
+ACC-ROLE-006,AWS Cloud,Cloud Security Administrator,ADMIN,True,True
+ACC-ROLE-007,Workday HR,Employee Self Service,READ_ONLY,False,True
+ACC-ROLE-008,Workday HR,HR Specialist Full Access,ADMIN,True,True
+ACC-ROLE-009,Salesforce,CRM Standard User,STANDARD_USER,True,True
+ACC-ROLE-010,Jira/Confluence,Product Workspace Member,STANDARD_USER,False,True
+ACC-ROLE-011,Slack,Enterprise Grid Member,STANDARD_USER,False,True
+ACC-ROLE-012,NetSuite,Finance Ledger Access,BILLING_ADMIN,True,True

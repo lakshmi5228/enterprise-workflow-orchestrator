@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ACC-ROLE-001",
+    "system_name": "Active Directory",
+    "role_name": "Domain User",
+    "access_level": "STANDARD_USER",
+    "approval_required": false,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-002",
+    "system_name": "Okta",
+    "role_name": "SSO Core Portal",
+    "access_level": "STANDARD_USER",
+    "approval_required": false,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-003",
+    "system_name": "GitHub Enterprise",
+    "role_name": "Source Code Contributor",
+    "access_level": "STANDARD_USER",
+    "approval_required": true,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-004",
+    "system_name": "GitHub Enterprise",
+    "role_name": "Repository Administrator",
+    "access_level": "ADMIN",
+    "approval_required": true,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-005",
+    "system_name": "AWS Cloud",
+    "role_name": "Production Deployer",
+    "access_level": "POWER_USER",
+    "approval_required": true,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-006",
+    "system_name": "AWS Cloud",
+    "role_name": "Cloud Security Administrator",
+    "access_level": "ADMIN",
+    "approval_required": true,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-007",
+    "system_name": "Workday HR",
+    "role_name": "Employee Self Service",
+    "access_level": "READ_ONLY",
+    "approval_required": false,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-008",
+    "system_name": "Workday HR",
+    "role_name": "HR Specialist Full Access",
+    "access_level": "ADMIN",
+    "approval_required": true,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-009",
+    "system_name": "Salesforce",
+    "role_name": "CRM Standard User",
+    "access_level": "STANDARD_USER",
+    "approval_required": true,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-010",
+    "system_name": "Jira/Confluence",
+    "role_name": "Product Workspace Member",
+    "access_level": "STANDARD_USER",
+    "approval_required": false,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-011",
+    "system_name": "Slack",
+    "role_name": "Enterprise Grid Member",
+    "access_level": "STANDARD_USER",
+    "approval_required": false,
+    "requires_active_status": true
+  },
+  {
+    "id": "ACC-ROLE-012",
+    "system_name": "NetSuite",
+    "role_name": "Finance Ledger Access",
+    "access_level": "BILLING_ADMIN",
+    "approval_required": true,
+    "requires_active_status": true
+  }
+]

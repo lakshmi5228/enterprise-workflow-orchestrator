@@ -1,0 +1,9 @@
+id,name,cost_center
+DEP-ENG,Engineering,CC-ENG-101
+DEP-PROD,Product Management,CC-PRD-102
+DEP-HR,Human Resources,CC-HRS-103
+DEP-IT,Information Technology,CC-ITS-104
+DEP-FIN,Finance & Accounting,CC-FIN-105
+DEP-SALES,Sales & Revenue,CC-SLS-106
+DEP-MKT,Marketing & Brand,CC-MKT-107
+DEP-OPS,Facilities & Operations,CC-OPS-108

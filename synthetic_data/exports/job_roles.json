@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ROLE-SWE-01",
+    "title": "Software Engineer",
+    "department_id": "DEP-ENG",
+    "level": "L2",
+    "equipment_tier": "STANDARD_DEV",
+    "base_access_profile": "DEVELOPER_PROFILE"
+  },
+  {
+    "id": "ROLE-SWE-02",
+    "title": "Senior Software Engineer",
+    "department_id": "DEP-ENG",
+    "level": "L3",
+    "equipment_tier": "STANDARD_DEV",
+    "base_access_profile": "DEVELOPER_PROFILE"
+  },
+  {
+    "id": "ROLE-DEV-LEAD",
+    "title": "Engineering Lead",
+    "department_id": "DEP-ENG",
+    "level": "L4",
+    "equipment_tier": "STANDARD_DEV",
+    "base_access_profile": "DEVELOPER_PROFILE"
+  },
+  {
+    "id": "ROLE-DEVOPS-01",
+    "title": "Cloud DevOps Engineer",
+    "department_id": "DEP-ENG",
+    "level": "L3",
+    "equipment_tier": "STANDARD_DEV",
+    "base_access_profile": "DEVELOPER_PROFILE"
+  },
+  {
+    "id": "ROLE-PM-01",
+    "title": "Product Manager",
+    "department_id": "DEP-PROD",
+    "level": "L3",
+    "equipment_tier": "STANDARD_OFFICE",
+    "base_access_profile": "BUSINESS_STANDARD"
+  },
+  {
+    "id": "ROLE-HR-BP",
+    "title": "HR Business Partner",
+    "department_id": "DEP-HR",
+    "level": "L3",
+    "equipment_tier": "STANDARD_OFFICE",
+    "base_access_profile": "HR_SECURE"
+  },
+  {
+    "id": "ROLE-HR-COORD",
+    "title": "People Operations Coordinator",
+    "department_id": "DEP-HR",
+    "level": "L1",
+    "equipment_tier": "STANDARD_OFFICE",
+    "base_access_profile": "HR_SECURE"
+  },
+  {
+    "id": "ROLE-IT-ADMIN",
+    "title": "IT Systems Administrator",
+    "department_id": "DEP-IT",
+    "level": "L3",
+    "equipment_tier": "STANDARD_DEV",
+    "base_access_profile": "DEVELOPER_PROFILE"
+  },
+  {
+    "id": "ROLE-IT-DESK",
+    "title": "Service Desk Specialist",
+    "department_id": "DEP-IT",
+    "level": "L2",
+    "equipment_tier": "STANDARD_OFFICE",
+    "base_access_profile": "BUSINESS_STANDARD"
+  },
+  {
+    "id": "ROLE-FIN-ANL",
+    "title": "Financial Analyst",
+    "department_id": "DEP-FIN",
+    "level": "L2",
+    "equipment_tier": "STANDARD_OFFICE",
+    "base_access_profile": "BUSINESS_STANDARD"
+  },
+  {
+    "id": "ROLE-SALES-AE",
+    "title": "Account Executive",
+    "department_id": "DEP-SALES",
+    "level": "L2",
+    "equipment_tier": "FIELD_MOBILE",
+    "base_access_profile": "BUSINESS_STANDARD"
+  },
+  {
+    "id": "ROLE-OPS-COORD",
+    "title": "Facilities Coordinator",
+    "department_id": "DEP-OPS",
+    "level": "L2",
+    "equipment_tier": "STANDARD_OFFICE",
+    "base_access_profile": "BUSINESS_STANDARD"
+  },
+  {
+    "id": "ROLE-VP-EXEC",
+    "title": "Vice President",
+    "department_id": "DEP-ENG",
+    "level": "EXEC",
+    "equipment_tier": "EXECUTIVE",
+    "base_access_profile": "LEADERSHIP_CORE"
+  }
+]

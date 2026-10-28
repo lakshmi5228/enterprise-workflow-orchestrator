@@ -1,0 +1,43 @@
+{
+  "generator_script": "generator.py",
+  "seed": 20261022,
+  "scale": 1.0,
+  "generated_at": "2026-10-28T18:05:19.175972",
+  "total_records": {
+    "employees": 1000,
+    "tasks": 8000,
+    "access_grants": 1500,
+    "assets": 1205,
+    "onboarding_cases": 1000,
+    "offboarding_cases": 139,
+    "audit_events": 1000,
+    "ground_truth_anomalies": 25
+  },
+  "sha256_checksums": {
+    "access_grants.csv": "634e8b75a3a7380cb226dcba991dd2954e8f050520cefadddcd81de69a107f4b",
+    "access_grants.json": "79df337750e7e42f3eac340dca4e76cb5cfcb6dc2b2a632ae55445ecc17e3b54",
+    "access_roles.csv": "1215f81e1a1ca29b1560642190fe016a33daff07d61dae4a7714de0cda0c3c35",
+    "access_roles.json": "8ca3c32ff8bccf5f166955c0c6d24bd6d5c0bbc8ce9dd310b988a86a3c4b344b",
+    "assets.csv": "b164b38c05d5e148c2520167abbfe91df54f245b66675d8d56ad3e2bae42361a",
+    "assets.json": "766f5909f85b63f83cbe2ba59f9cc015acc5725d761e1353ac4875b0bdf763af",
+    "audit_events.csv": "56a8cb79815c71e09a240d7a28bd5249baf49276a89af288c67e5d520a51feab",
+    "audit_events.json": "a093ce41a59039aa0213d47a1e9ccacc3ea4e00f685b318ce7f8cae68730963b",
+    "departments.csv": "418e54823cbe176e1285c75335217292210ef95ce25f8e9928cdc61c379959be",
+    "departments.json": "f0ee81fa46cff0f681fc76f5c9ed68a2dfd481ee035769af3e65422bcdc519d6",
+    "employees.csv": "b11ab06c9873211d2e4ea4a74510a581978f983ba1dc480dcb7892d985e3ad9e",
+    "employees.json": "fe5d37fe41dd2ea3591d5fd4c1d78189c52ae9691768664e681dd736410bb057",
+    "ground_truth.csv": "4cfa881337c74538031ebbbf8d2a81c3f126980f7e131c47cad689ae89726ce9",
+    "ground_truth.json": "a62a85b1f0ade67cc8b09adba94737c507ac793b7180ee52cc9679e4c9f09eb6",
+    "job_roles.csv": "2791ea311bedb242ea1c9ace59c08fb33a23b2d7530db3e7443dde90e304b5ff",
+    "job_roles.json": "be56fe87c2b7d272e75b87126f58357cad933c9528fda3287822aedf6c1b45a3",
+    "offboarding_cases.csv": "88fc50199c98d7a267ffb69fc89ab7b02da804e488f26292a30b01d4abe9be5b",
+    "offboarding_cases.json": "3ee1d43dfb83a61b7aad261bcfd741cfcf61cb4e83211404d7971c4ab2edd710",
+    "onboarding_cases.csv": "4b1568dcca1cbd333433a42ff209f2cde0670b36460a747d43321fd4c761e63b",
+    "onboarding_cases.json": "2e30dd0879697ce2d201e31d222d0f40c093c1f933ce42d680ae01f3f98fd9a7",
+    "seed_data.sql": "7cea48ce7ecc2fa70ef9ca302aa1cfeb2c4443f0a26a7fff6906fc2e5263fba6",
+    "task_dependencies.csv": "4e5e6ea90607ec3d82f558309c3b25a9337a2b5b6a6d7642bf72c8daa8d8c484",
+    "task_dependencies.json": "3eba2f81592cb1286bec30ff32b9739ac4f95734b3c70fa1883024a525d32407",
+    "tasks.csv": "15d46a9b61536809709cebb6b36b4c38e6835d82f35a2c35d03967a8969f0868",
+    "tasks.json": "770bc67428436e026447f738aa101089773834b2ba0c60f38f32ac8af6c58c0c"
+  }
+}
